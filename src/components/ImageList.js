@@ -1,9 +1,12 @@
+import "./ImageList.css";
+import ImageCard from "./ImageCard";
+
 const ImageList = ({ images }) => {
-  const list = images.map(({ urls, id, description }) => {
-    return <img src={urls.regular} alt={description} key={id} />;
+  const list = images.map((image) => {
+    return <ImageCard key={image.id} image={image} />;
   });
 
-  return <div> {list} </div>;
+  return <div className="image-list"> {list} </div>;
 };
 
 export default ImageList;
